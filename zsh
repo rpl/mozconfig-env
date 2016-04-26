@@ -41,7 +41,7 @@ mozconfig-init() {
     }
 
     mozconfig-list() {
-      local mozconfig_available=`ls $mozconfig_dir`
+      local mozconfig_available=`ls $_mozconfig_dir`
       echo -e "Available MOZCONFIG profiles:"
       echo -e "$mozconfig_available"  | tr " " "\n" | sed "s/^/\t- /g"
     }
