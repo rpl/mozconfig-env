@@ -1,0 +1,14 @@
+# Automatically download and use compiled C++ components:
+
+### NOTE: this exports is needed to enable the debug artifact because
+### --enable-debug seems to do not define it (probably because
+### enabling the artifact builds disable the compile environment)
+### (and depends from the patch attached to Bug  1253697,
+### https://bugzilla.mozilla.org/show_bug.cgi?id=1253697)
+export MOZ_DEBUG=1
+
+ac_add_options --enable-debug
+ac_add_options --enable-artifact-builds
+
+# Write build artifacts to:
+mk_add_options MOZ_OBJDIR=./objdir-frontend-debug
